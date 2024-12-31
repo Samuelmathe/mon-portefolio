@@ -1,0 +1,202 @@
+/* Reset des marges et des paddings pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* décoration des liens */
+a {
+    color: yellow;
+    text-decoration: none; /* Pour supprimer le soulignement du lien si nécessaire */
+}
+
+/* Style du body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: rgb(83,242,236);
+    background: linear-gradient(90deg, rgba(83,242,236,1) 0%, rgba(83,242,236,1) 2%, 
+    rgba(255,255,255,1) 6%, rgba(251,252,248,1) 95%,
+    rgba(83,242,236,1) 98%);
+    color: #444; /* Texte légèrement plus sombre */
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+header {
+    text-align: center;
+    padding: 50px 0;
+    background: rgb(9,65,121);
+    background: linear-gradient(90deg, rgba(9,65,121,1) 0%, rgba(0,235,255,1) 92%, rgba(0,212,255,1) 92%, rgba(2,0,36,1) 100%);
+    color: #fff; /* Texte blanc */
+}
+
+header img {
+    width: 150px;
+    border-radius: 50%; /* Pour une photo de profil ronde */
+    margin-bottom: 20px;
+}
+
+/* Titres principaux */
+h1, h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333; /* Titres plus sombres pour meilleure lisibilité */
+    text-align: center;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    background-color: #fff; /* Arrière-plan blanc pour les sections */
+    color: #333; /* Texte sombre */
+}
+
+/* Projets */
+.project-title {
+    text-align: center;
+    margin-bottom: 30px; /* Un peu d'espace en bas */
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Mise à jour de la disposition des projets */
+.project {
+    width: calc(33.33% - 20px); /* Pour créer une disposition en 3 colonnes avec un espace entre */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.project-image {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
+    text-align: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image tout en conservant les proportions */
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour la description */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project:hover .project-description {
+    opacity: 1; /* Rend la description visible au survol */
+}
+
+.project:hover img {
+    transform: scale(1.1); /* Légèrement agrandir l'image au survol */
+}
+
+.project h3 {
+    margin-top: 10px;
+}
+
+/* Compétences */
+.skill {
+    margin-bottom: 20px;
+}
+
+/* Style pour les barres de progression */
+.progress-bar {
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 5px;
+    overflow: hidden; /* Assure que la largeur animée reste dans la zone */
+}
+
+.progress {
+    background-color: #227ded; /* Couleur de remplissage */
+    height: 100%;
+    border-radius: 5px;
+    width: 0; /* La largeur initiale est 0 pour l'animation */
+    transition: width 1s ease-in-out; /* Animation de transition de largeur */
+}
+
+/* Contact */
+#contact {
+    text-align: center;
+    background-color: #f9f9f9; /* Fond plus clair */
+    padding: 50px 0;
+}
+
+#contact a {
+    color: #227ded; /* Couleur des liens */
+    text-decoration: none; /* Enlever le soulignement des liens */
+}
+
+#contact a:hover {
+    text-decoration: underline; /* Soulignement des liens au survol */
+}
+
+#contact p {
+    margin-bottom: 10px; /* Espace entre chaque paragraphe */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: rgb(9,65,121);
+    background: linear-gradient(90deg, rgba(9,65,121,1) 0%, rgba(0,235,255,1) 92%, rgba(0,212,255,1) 92%, rgba(2,0,36,1) 100%);
+    color: rgb(210, 210, 210); /* Texte blanc */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .project {
+        width: calc(50% - 20px); /* Passe à 2 colonnes pour les grands écrans */
+    }
+    #projects {
+        display: block; /* Pour que les éléments prennent la largeur entière */
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        width: 100%; /* Passe à 1 colonne sur les écrans moyens */
+    }
+    h1, h2 {
+        font-size: 2em; /* Réduit la taille des titres sur petits écrans */
+    }
+    section {
+        padding: 40px 20px; /* Réduit le padding des sections */
+    }
+    header img {
+        width: 120px; /* Réduit la taille de l'image de profil */
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        width: 100px; /* Plus petite taille d'image de profil pour les très petits écrans */
+    }
+    h1, h2 {
+        font-size: 1.5em; /* Réduit encore la taille des titres sur les très petits écrans */
+    }
+    .project-title {
+        font-size: 1.2em; /* Réduit la taille du titre des projets */
+    }
+}
